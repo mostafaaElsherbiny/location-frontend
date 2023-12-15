@@ -57,7 +57,6 @@
       Create
     </button>
 
-    <!-- link to go to locations  -->
     <router-link
       :to="{ name: 'locations.index' }"
       class="inline-flex items-center px-4 mx-4 py-2 text-xs font-semibold tracking-widest text-white uppercase bg-red-800 rounded-md border border-transparent ring-gray-300 transition duration-150 ease-in-out hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-red-900 focus:ring disabled:opacity-25"
@@ -69,7 +68,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import useCompanies from "../../composables/locations";
+import useCompanies from "@/composables/locations";
 
 const form = ref({
   title: "",

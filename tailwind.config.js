@@ -6,7 +6,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
-    // Add other file paths as needed
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
@@ -21,5 +21,5 @@ export default {
       opacity: ["disabled"],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("flowbite/plugin")],
 };

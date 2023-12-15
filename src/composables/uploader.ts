@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
-import ErrorInterface from "../Types/ErrorInterface";
+import ErrorInterface from "@/Types/ErrorInterface";
 
 export default function useUploader() {
   const router = useRouter();
@@ -15,8 +15,12 @@ export default function useUploader() {
 
       await router.push({ name: "locations.index" });
     } catch (e: any) {
-      if (e.response.status === 400) {
-        errors.value = { ...e.response.data, hasError: true };
+      const response: {
+        status: number;
+        data: ErrorInterface;
+      } = e.response;
+      if (response.status === 400) {
+        errors.value = { ...response.data, hasError: true };
       }
     }
   };

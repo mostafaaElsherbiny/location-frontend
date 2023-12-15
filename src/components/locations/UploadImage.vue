@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import useUploader from "../../composables/uploader";
+import useUploader from "@/composables/uploader";
 
 const { errors, store } = useUploader();
 

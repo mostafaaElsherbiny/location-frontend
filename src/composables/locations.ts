@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
-import ErrorInterface from "../Types/ErrorInterface";
+import ErrorInterface from "@/Types/ErrorInterface";
 
 interface LocationType {
   id: number;

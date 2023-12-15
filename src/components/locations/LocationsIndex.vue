@@ -13,13 +13,8 @@
           >Add Location</router-link
         >
       </div>
-      <div
-        class="px-4 py-2 mx-2 text-white bg-indigo-600 hover:bg-indigo-700 cursor-pointer"
-      >
-        <router-link :to="{ name: 'uploader' }" class="text-sm font-medium"
-          >Upload image</router-link
-        >
-      </div>
+     
+    
     </div>
     <GMapMap
       :center="center"
@@ -35,7 +30,7 @@
       >
         <GMapInfoWindow
           :closeclick="true"
-          @closeclick="openMarker(null)"
+          @closeclick="openMarker(-1)"
           :opened="openedMarkerID === location.id"
         >
           <div>
@@ -61,9 +56,9 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import useCompanies from "../../composables/locations";
+import useCompanies from "@/composables/locations";
 const center = ref({ lat: 30.033333, lng: 31.233334 });
-const openedMarkerID = ref(null);
+const openedMarkerID = ref(-1);
 
 const { locations, getLocations } = useCompanies();
 
